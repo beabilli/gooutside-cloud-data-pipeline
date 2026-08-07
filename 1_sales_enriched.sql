@@ -14,7 +14,7 @@ SELECT
   p.`Product line` AS product_line,
   p.`Product type` AS product_type,
   p.Product AS product,
-  p.`Product brand` AS product_brand, -- Sistemata la battitura 'paroduct_brand'
+  p.`Product brand` AS product_brand,
 
   s.`Order method code` AS order_method_code,
   m.`Order method type` AS order_method,
@@ -23,7 +23,7 @@ SELECT
   s.`Unit sale price` AS unit_sale_price,
   p.`Unit cost` AS unit_cost,
 
-  -- Colonne Finanziarie Calcolate (Feature Engineering)
+  -- Calculated Financial Metrics (Feature Engineering)
   s.Quantity * s.`Unit sale price` AS revenue,
   s.Quantity * p.`Unit cost` AS cost,
   s.Quantity * (s.`Unit sale price` - p.`Unit cost`) AS profit
